@@ -1,4 +1,6 @@
-﻿Console.Clear();
+﻿// Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+
+Console.Clear();
 System.Console.Write("Enter first number: ");
 int num_1 = int.Parse(Console.ReadLine());
 System.Console.Write("Enter second number: ");

@@ -1,4 +1,6 @@
-﻿Console.Clear();
+﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+
+Console.Clear();
 System.Console.Write("Enter first number: ");
 int num_1 = int.Parse(Console.ReadLine());
 System.Console.Write("Enter second number: ");
