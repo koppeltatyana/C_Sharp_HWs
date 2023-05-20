@@ -10,6 +10,6 @@ if (num_1 > num_2 && num_1 > num_3) {
     System.Console.WriteLine($"Max number is {num_1}");
 } else if (num_2 > num_1 && num_2 > num_3) {
     System.Console.WriteLine($"Max number is {num_2}");
-} else if (num_3 > num_1 && num_3 > num_2) {
+} else {
     System.Console.WriteLine($"Max number is {num_3}");
 }
