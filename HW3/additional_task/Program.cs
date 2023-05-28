@@ -42,9 +42,10 @@ while (true) {
     System.Console.Write("Введите число N: ");
     int N = int.Parse(Console.ReadLine());
 
-    if (N <= 0) 
-    {
+    if (N <= 0) {
         System.Console.WriteLine("Необходимо ввести целое положительное число. Попробуйте еще раз.");
+    } else if (N == 1) {
+        System.Console.WriteLine("С одной монеткой неинтересно. Попробуйте еще раз.");
     } else {
         int[] bites_array = FillBiteArray(N);  // заполнили массив рандомными решками и орлами
         WriteArray(bites_array); // печататем массив монет
@@ -54,12 +55,16 @@ while (true) {
         int tail_count = CountNumberInArray(num: 1, array: bites_array);  // получить кол-во вхождений решек в массиве
         WriteEmptyString();
 
-        if (head_count == tail_count) System.Console.WriteLine("Можете переворачивать любые одинаковые монеты, так как количество монет с орлом и решкой одинаковое");
-        else if (head_count == 0 || tail_count == 0) System.Console.WriteLine("О, чудо! Все монетки лежат одной стороной! Вероятность 50% на вас не работает :)");
-        else if (head_count < tail_count) {
-            System.Console.WriteLine($"Необходимо перевернуть {head_count} монет, лежавших вверх орлом");
+        if (head_count == tail_count) {
+            System.Console.WriteLine("Чтобы все монетки были повернуты вверх одной и той же стороной, можете переворачивать любые одинаковые монеты, так как количество монет с орлом и решкой одинаковое.");
+        } else if (head_count == 0 || tail_count == 0) {
+            System.Console.WriteLine("О, чудо! Все монетки лежат одной стороной! Вероятность 50% на вас не работает :)");
+        } else if (head_count < tail_count) {
+            System.Console.WriteLine(
+                $"Чтобы все монетки были повернуты вверх одной и той же стороной, необходимо перевернуть монет - {head_count}, которые лежат вверх орлом.");
         } else {
-            System.Console.WriteLine($"Необходимо перевернуть {tail_count} монет, лежавших вверх решкой");
+            System.Console.WriteLine(
+                $"Чтобы все монетки были повернуты вверх одной и той же стороной, необходимо перевернуть монет - {tail_count}, которые лежат вверх решкой.");
         }
         break;
     }
