@@ -4,14 +4,14 @@
 // A (7,-5, 0); B (1,-1,9) -> 11.53
 
 Console.Clear();
-int[] FillRandomPointArray(int array_length) {
+int[] FillRandomPointArray(int array_length = 3, int min_coordinate = -99, int max_coordinate = 99) {
     int[] result = new int[array_length];
-    for (int i = 0; i < array_length; i++) result[i] = new Random().Next(-999, 999);
+    for (int i = 0; i < array_length; i++) result[i] = new Random().Next(min_coordinate, max_coordinate);
     return result;
 }
 
-int[] point_1 = FillRandomPointArray(3);
-int[] point_2 = FillRandomPointArray(3);
+int[] point_1 = FillRandomPointArray();
+int[] point_2 = FillRandomPointArray();
 
 double result = Math.Sqrt(Math.Pow(point_1[0] - point_2[0], 2) + Math.Pow(point_1[1] - point_2[1], 2) + Math.Pow(point_1[2] - point_2[2], 2));
 System.Console.WriteLine(
