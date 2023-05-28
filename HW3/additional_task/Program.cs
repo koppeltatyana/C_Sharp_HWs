@@ -50,16 +50,16 @@ while (true) {
         WriteArray(bites_array); // печататем массив монет
 
         WriteEmptyString();
-        int zero_count = CountNumberInArray(num: 0, array: bites_array);  // получить кол-во вхождений орлов в массиве
-        int one_count = CountNumberInArray(num: 1, array: bites_array);  // получить кол-во вхождений решек в массиве
+        int head_count = CountNumberInArray(num: 0, array: bites_array);  // получить кол-во вхождений орлов в массиве
+        int tail_count = CountNumberInArray(num: 1, array: bites_array);  // получить кол-во вхождений решек в массиве
         WriteEmptyString();
 
-        if (zero_count == one_count) System.Console.WriteLine("Можете переворачивать любые одинаковые монеты, так как количество монет с орлом и решкой одинаковое");
-        else if (zero_count == 0 || one_count == 0) System.Console.WriteLine("О, чудо! Все монетки лежат одной стороной! Вероятность 50% на вас не работает :)");
-        else if (zero_count < one_count) {
-            System.Console.WriteLine($"Необходимо перевернуть {zero_count} монет, лежавших вверх орлом");
+        if (head_count == tail_count) System.Console.WriteLine("Можете переворачивать любые одинаковые монеты, так как количество монет с орлом и решкой одинаковое");
+        else if (head_count == 0 || tail_count == 0) System.Console.WriteLine("О, чудо! Все монетки лежат одной стороной! Вероятность 50% на вас не работает :)");
+        else if (head_count < tail_count) {
+            System.Console.WriteLine($"Необходимо перевернуть {head_count} монет, лежавших вверх орлом");
         } else {
-            System.Console.WriteLine($"Необходимо перевернуть {bites_array.Length - zero_count} монет, лежавших вверх решкой");
+            System.Console.WriteLine($"Необходимо перевернуть {tail_count} монет, лежавших вверх решкой");
         }
         break;
     }
