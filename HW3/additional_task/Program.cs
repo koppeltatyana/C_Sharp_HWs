@@ -52,7 +52,7 @@ while (true) {
 
         WriteEmptyString();
         int head_count = CountNumberInArray(num: 0, array: bites_array);  // получить кол-во вхождений орлов в массиве
-        int tail_count = CountNumberInArray(num: 1, array: bites_array);  // получить кол-во вхождений решек в массиве
+        int tail_count = CountNumberInArray(num: 1, array: bites_array);  // получить кол-во вхождений решек в массиве (да, можно было вычесть из общего # head_count, но тогда не было бы красивого вывода)
         WriteEmptyString();
 
         if (head_count == tail_count) {
