@@ -5,8 +5,8 @@
 
 int GetNumsSum(int num) {
     int nums_sum = 0;
-    while (num > 0) {
-        nums_sum += num % 10;
+    while (Math.Abs(num) > 0) {
+        nums_sum += Math.Abs(num) % 10;
         num /= 10;
     }
     return nums_sum;
