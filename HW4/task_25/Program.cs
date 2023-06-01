@@ -3,14 +3,15 @@
 // 2, 4 -> 16
 Console.Clear();
 
-int MyPow(int number, int degree) {
-    int result = 1;
-    for (int i = 1; i <= degree; i++) result *= number;
-    return result;
+double MyPow(double number, double degree) {
+    double result = 1;
+    for (int i = 1; i <= Math.Abs(degree); i++) result *= number;
+    if (degree < 0) return 1 / result;
+    else return result;
 }
 
 System.Console.Write("Введите число, которое хотите возвести в степень: ");
-int num = int.Parse(System.Console.ReadLine());
+double num = double.Parse(System.Console.ReadLine());
 System.Console.Write($"Введите степень, в которую хотите возвести число {num}: ");
-int degree = int.Parse(System.Console.ReadLine());
+double degree = double.Parse(System.Console.ReadLine());
 System.Console.WriteLine($"Число {num} в степени {degree} равно {MyPow(num, degree)}");
