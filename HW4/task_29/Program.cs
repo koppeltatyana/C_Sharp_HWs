@@ -2,11 +2,20 @@
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
+void WriteEmptyString() {
+    // вывести пустую строку
+    System.Console.WriteLine();
+}
+
 void BeautifullyPrintArray(int[] array) {
+    // красиво вывести массив
+    WriteEmptyString();
     System.Console.WriteLine($"Ваш массив: [{String.Join(", ", array)}]");
+    WriteEmptyString();
 }
 
 int[] RandomArray(int array_size = 8) {
+    // сгенерировать массив случайных чисел от 0 до 99 заданной длины 
     int[] result = new int[array_size];
     for (int i = 0; i < array_size; i++) result[i] = new Random().Next(100);
     return result;
@@ -29,11 +38,11 @@ switch (answer)
         int[] your_array = new int[arr_size];
         while (true) {
             System.Console.Write($"Введите массив длиной {arr_size} через пробел: ");
-            string str_arr = System.Console.ReadLine();
+            string str_arr = System.Console.ReadLine().Trim();
             your_array = Array.ConvertAll(str_arr.Split(), int.Parse);
             if (your_array.Length == arr_size) break;
             else {
-                System.Console.WriteLine();
+                WriteEmptyString();
                 System.Console.WriteLine($"Вы ввели неверное количество элементов массива. Требуется - {arr_size}. Попробуйте снова.");
             }
         }   
