@@ -16,4 +16,3 @@ Console.Clear();
 System.Console.Write("Введите число: ");
 int num = int.Parse(System.Console.ReadLine());
 System.Console.WriteLine($"Сумма цифр числа {num} равна {GetNumsSum(num)}");
-
