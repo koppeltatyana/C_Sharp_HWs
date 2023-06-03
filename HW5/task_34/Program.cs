@@ -12,6 +12,7 @@ int arr_even_num_count = GetEvenNumbersCount(array: random_array);
 System.Console.WriteLine($"Массив случайных трехзначных чисел: [{String.Join(", ", random_array)}]");
 System.Console.WriteLine($"Количество четных чисел в массиве -- {arr_even_num_count}");
 
+/*----------------------- РЕАЛИЗАЦИЯ МЕТОДОВ -----------------------*/
 int[] GetRandomArray(int array_size, int min_value = 100, int max_value = 1000) {
     int[] result = new int[array_size];
     for (int i = 0; i < array_size; i++) {
