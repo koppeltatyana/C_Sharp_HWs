@@ -11,17 +11,17 @@ System.Console.WriteLine($"Массив случайных вещественн�
 PrintEmptyString();
 double[] array_max_min = GetArrayMaxMin(array: random_array);
 System.Console.WriteLine(
-    $"Разница между максимальным ({array_max_min[0]}) и минимальным ({array_max_min[1]}) значениями равно {array_max_min[0] - array_max_min[1]}");
+    $"Разница между максимальным ({array_max_min[0]}) и минимальным ({array_max_min[1]}) значениями равно " +
+    $"{Math.Round(array_max_min[0] - array_max_min[1], 3)}");
 
 /*----------------------- РЕАЛИЗАЦИЯ МЕТОДОВ -----------------------*/
 double[] GetRandomDoubleArray(int array_size) {
     double[] result = new double[array_size];
 
-    int[] num_sign = {-1, 1};
     for (int i = 0; i < array_size; i++) {
         result[i] = 
         Math.Round(
-            new Random().NextDouble() * new Random().Next(1, 20) * num_sign[new Random().Next(0, 2)], 3
+            new Random().NextDouble() * new Random().Next(1, 100), 3
         ); // домножаем на произвольное число, так как NextDouble генерирует число от 0 до 1
     }
     return result;
