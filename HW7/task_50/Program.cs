@@ -9,15 +9,13 @@
 Console.Clear();
 Console.Write("Введите размерность двумерного массива через пробел: ");
 int[] arraySize = GetIntArrayFromString(expectedSize: 2);
-PrintEmptyString();
 int[,] randomArray = GetRandomArray(arraySize[0], arraySize[1]);
 PrintArray(randomArray);
-PrintEmptyString();
 
 System.Console.Write("Введите индексы элемента через пробел: ");
 int[] arrayElementIndexes = GetIntArrayFromString(expectedSize: 2);
 System.Console.WriteLine(
-    $"randomArray[{arrayElementIndexes[0]}][{arrayElementIndexes[1]}] -> {GetArrayElement(arrayElementIndexes, randomArray)}\n");
+    $"\nЭлемент массива array[{arrayElementIndexes[0]}][{arrayElementIndexes[1]}] -> {GetArrayElement(arrayElementIndexes, randomArray)}\n");
 
 
 int[,] GetRandomArray(int n, int m, int minValue = 1, int maxValue = 10) {
@@ -33,23 +31,20 @@ int[,] GetRandomArray(int n, int m, int minValue = 1, int maxValue = 10) {
 
 string GetArrayElement(int[] elIndexes, int[,] array) {
     if (elIndexes[0] >= array.GetLength(0) || elIndexes[1] >= array.GetLength(1)) {
-        return $"Элемента [{elIndexes[0]}, {elIndexes[1]}] нет в массиве";
+        return $"элемента array[{elIndexes[0]}, {elIndexes[1]}] нет в массиве";
     } else {
         return $"{array[elIndexes[0], elIndexes[1]]}";
     }
 }
 
 void PrintArray(int[,] array) {
-    System.Console.WriteLine("Массив: ");
+    System.Console.WriteLine("\nМассив: ");
     for (int i = 0; i < array.GetLength(0); i++) {
         for (int j = 0; j < array.GetLength(1); j++) {
             System.Console.Write(array[i, j] + " ");
         }
         System.Console.WriteLine();
     }
-}
-
-void PrintEmptyString() {
     System.Console.WriteLine();
 }
 

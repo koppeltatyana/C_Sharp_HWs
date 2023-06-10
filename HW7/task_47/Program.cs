@@ -6,12 +6,9 @@
 // 8 7,8 -7,1 9
 
 Console.Clear();
-System.Console.Write("Введите количество строк в массиве: ");
-int n = int.Parse(System.Console.ReadLine());
-System.Console.Write("Введите количество столбцов в массиве: ");
-int m = int.Parse(System.Console.ReadLine());
-PrintEmptyString();
-double[,] randomArray = GetRandomArray(n, m);
+Console.Write("Введите размерность двумерного массива через пробел: ");
+int[] arraySize = GetIntArrayFromString(expectedSize: 2);
+double[,] randomArray = GetRandomArray(arraySize[0], arraySize[1]);
 PrintArray(randomArray);
 
 double[,] GetRandomArray(int n, int m) {
@@ -26,15 +23,25 @@ double[,] GetRandomArray(int n, int m) {
 }
 
 void PrintArray(double[,] array) {
-    System.Console.WriteLine("Массив: ");
+    System.Console.WriteLine("\nМассив: ");
     for (int i = 0; i < array.GetLength(0); i++) {
         for (int j = 0; j < array.GetLength(1); j++) {
             System.Console.Write(array[i, j] + " ");
         }
         System.Console.WriteLine();
     }
+    System.Console.WriteLine();
 }
 
-void PrintEmptyString() {
-    System.Console.WriteLine();
+int[] GetIntArrayFromString(int expectedSize) {
+    while (true) {
+        string text = System.Console.ReadLine().Trim();
+        text = String.Join(" ", text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries));
+        
+        if ((text.Split()).Length != expectedSize) {
+            System.Console.WriteLine($"Вы ввели неверное количество чисел. Ожидается {expectedSize}. Попробуйте еще раз.");
+        } else {
+            return Array.ConvertAll(text.Split(), int.Parse);
+        }
+    }
 }
