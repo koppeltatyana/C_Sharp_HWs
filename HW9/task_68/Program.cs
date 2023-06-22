@@ -9,12 +9,18 @@ int m, n;
 while (true) {
     Console.Write("Введите число n: ");
     n = int.Parse(System.Console.ReadLine());
+
+    if (n >= 0) break;
+    System.Console.WriteLine("Число n должно быть неотрицательным. Попробуйте еще раз.");
+}
+while (true) {
     Console.Write("Введите число m: ");
     m = int.Parse(System.Console.ReadLine());
 
-    if (n > 0 && m > 0) break;
-    System.Console.WriteLine("Числа n и m должны быть больше 0. Попробуйте еще раз.");
+    if (m >= 0) break;
+    System.Console.WriteLine("Число m должно быть неотрицательным. Попробуйте еще раз.");
 }
+
 int ackResult = GetAck(m, n);
 System.Console.WriteLine(ackResult);
 
