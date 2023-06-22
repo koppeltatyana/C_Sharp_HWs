@@ -6,7 +6,7 @@
 // 26(1,0,1) 55(1,1,1)
 
 Console.Clear();
-Console.Write("Введите размерность двумерного массива через пробел: ");
+Console.Write("Введите размерность трехмерного массива через пробел: ");
 int[] arraySize = GetIntArrayFromString(expectedSize: 3);
 
 int[,,] array = GetArray(arraySize, 10, 99);
