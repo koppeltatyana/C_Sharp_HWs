@@ -24,7 +24,7 @@ System.Console.WriteLine("Массив: ");
 PrintArray(randomArray); PrintEmptyString();
 
 int arrayIndex = GetArrayRowMinSumIndex(randomArray);
-System.Console.WriteLine($"Строка массива с наименьшей суммой элементов - {arrayIndex + 1}");
+System.Console.WriteLine($"Строка {arrayIndex + 1} массива имеет наименьшую сумму элементов");
 
 int[,] RandomArray(int m, int n, int minValue = -10, int maxValue = 10) {
     int[,] array = new int[m, n];
