@@ -7,12 +7,10 @@ Console.Clear();
 Console.Write("Введите число N: ");
 int N = int.Parse(System.Console.ReadLine());
 System.Console.Write($"N = {N} => ");
-DecrementNum(N); PrintEmptyString();
+System.Console.WriteLine(DecrementNum(N));
 
-void DecrementNum(int n) {
-    if (n == 0) return;
-    System.Console.Write($"{n} ");
-    DecrementNum(n - 1);
+string DecrementNum(int n) {
+    if (n == 1) return $"{n}";
+    string s = $"{n} " + DecrementNum(n - 1);
+    return s;
 }
-
-void PrintEmptyString() {System.Console.WriteLine();}
