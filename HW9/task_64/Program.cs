@@ -15,8 +15,4 @@ void DecrementNum(int n) {
     DecrementNum(n - 1);
 }
 
-void PrintArray(int[] array) {
-    System.Console.WriteLine($"{String.Join(", ", array)}");
-}
-
 void PrintEmptyString() {System.Console.WriteLine();}
